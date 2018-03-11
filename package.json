@@ -1,8 +1,8 @@
 {
   "name": "es-treasure",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "前端常用工具方法集合",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +23,14 @@
   },
   "homepage": "https://github.com/nocoolyoyo/es-treasure#readme",
   "dependencies": {
-    "clipboard": "^2.0.0"
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "clipboard": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "lodash": "^4.17.5"
   }
 }

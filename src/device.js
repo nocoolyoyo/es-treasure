@@ -15,7 +15,7 @@ export  function initClient() {
 		Client.OS = "IOS"
 	}else if(/android/gi.test(navigator.userAgent)){
 		Client.OS = "Android"
-	}else if(/window/gi.test(navigator.userAgent){
+	}else if(/window/gi.test(navigator.userAgent)){
 		Client.OS = "Windows"
 	}
 

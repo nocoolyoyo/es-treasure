@@ -35,4 +35,7 @@ export  function setAttribute() {
 	$root.setAttribute('lang',  Client.lang)
 	$root.setAttribute('data-client-os',  Client.OS)
 	$root.setAttribute('data-client-type',  Client.type)
+	if(Client.lang === "ar") {
+		$root.setAttribute('dir',  'rtl')
+	}
 }

@@ -1,0 +1,28 @@
+{
+  "name": "es-treasure",
+  "version": "0.0.1",
+  "description": "前端常用工具方法集合",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nocoolyoyo/es-treasure.git"
+  },
+  "keywords": [
+    "utils",
+    "javascript",
+    "es",
+    "tools"
+  ],
+  "author": "nocoolyoyo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nocoolyoyo/es-treasure/issues"
+  },
+  "homepage": "https://github.com/nocoolyoyo/es-treasure#readme",
+  "dependencies": {
+    "clipboard": "^2.0.0"
+  }
+}

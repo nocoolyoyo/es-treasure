@@ -4,7 +4,7 @@
  */
 let Client = { }
 
-export  function initClient() {
+export  function initClient(lang) {
 	if(/mobile/gi.test(navigator.userAgent)){
 		Client.type = "mobile"
 	}else{
@@ -19,7 +19,11 @@ export  function initClient() {
 		Client.OS = "Windows"
 	}
 
-	Client.lang = navigator.language
+	if(lang && lang !== ''){
+		Client.lang = lang
+	} else{
+		Client.lang = navigator.language
+	}
 }
 
 export  function getClient() {
@@ -28,13 +32,13 @@ export  function getClient() {
 	return Client
 }
 
-export  function setAttribute() {
-	if (Object.keys(Client).length === 0) 	initClient()
+export  function setAttribute(lang) {
+	if (Object.keys(Client).length === 0) 	initClient(lang)
 
 	let $root = document.documentElement
-	$root.setAttribute('lang',  Client.lang)
 	$root.setAttribute('data-client-os',  Client.OS)
 	$root.setAttribute('data-client-type',  Client.type)
+	$root.setAttribute('lang',  Client.lang)
 	if(Client.lang === "ar") {
 		$root.setAttribute('dir',  'rtl')
 	}

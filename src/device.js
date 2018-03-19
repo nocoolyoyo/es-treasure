@@ -2,11 +2,10 @@
  * 设备信息，同时提供初始化方法在页面初始化挂载
  * Created by nocoolyoyo on 2018/3/11.
  */
-import getParam from './getParam'
 
 let Client = { }
 
-export  function initClient(lang=getParam('lang')) {
+export  function initClient(lang) {
 	if(/mobile/gi.test(navigator.userAgent)){
 		Client.type = "mobile"
 	}else{
@@ -22,6 +21,8 @@ export  function initClient(lang=getParam('lang')) {
 	}
 
 	if(lang && lang !== ''){
+		lang = lang.split('-')
+		if(lang.length > 1) lang = lang[0]+'-'+lang[1].toUpperCase()
 		Client.lang = lang
 	} else{
 		Client.lang = navigator.language

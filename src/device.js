@@ -12,6 +12,7 @@ export  function initClient(lang) {
 		Client.type = "pc"
 	}
 
+
 	if(/ipad|iphone|mac/gi.test(navigator.userAgent)){
 		Client.OS = "IOS"
 	}else if(/android/gi.test(navigator.userAgent)){

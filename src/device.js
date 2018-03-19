@@ -29,7 +29,6 @@ export  function initClient(lang=getParam('lang')) {
 }
 
 export  function getClient() {
-	if (Object.keys(Client).length === 0) 	initClient()
 	return Client
 }
 

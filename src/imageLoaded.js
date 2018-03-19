@@ -9,7 +9,7 @@
  * @author: nocoolyoyo
  * @date: 2018-03-11
  * */
-export function imageLoaded(url){
+export default function imageLoaded(url){
 	return new Promise((resolve, reject)=>{
 		let img = new Image() ;
 		img.onload = function(){

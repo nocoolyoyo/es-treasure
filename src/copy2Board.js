@@ -9,7 +9,7 @@
  *
  */
 import ClipboardJS from 'clipboard'
-export  function clip2Board(text='') {
+export  default function clip2Board(text='') {
 	let domId = 'clipDom' + new Date().getTime()
 	let $dom = document.createElement('button')
 	$dom.style.display = 'hidden'

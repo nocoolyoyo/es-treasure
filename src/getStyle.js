@@ -9,7 +9,7 @@
  * @date: 2018-03-11
  * */
 
-export function getStyle (element, styleName) {
+export default function getStyle (element, styleName) {
 	if (!element || !styleName) return null;
 	styleName = camelCase(styleName);
 	if (styleName === 'float') {

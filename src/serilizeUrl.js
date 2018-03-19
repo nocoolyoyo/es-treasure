@@ -7,7 +7,7 @@
  * @author: nocoolyoyo
  * @date: 2018-03-11
  * */
-export default function strStyle(styleObj){
+export default function serilizeUrl(styleObj){
 	let cssStr = '';
 	for( let key in styleObj){
 		if(styleObj.hasOwnProperty(key)) cssStr += `${key}:${styleObj[key]};`;

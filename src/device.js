@@ -23,7 +23,11 @@ export  function initClient(lang) {
 
 	if(lang && lang !== ''){
 		lang = lang.split('-')
-		if(lang.length > 1) lang = lang[0]+'-'+lang[1].toUpperCase()
+		if(lang.length > 1) {
+			lang = lang[0]+'-'+lang[1].toUpperCase()
+		}else{
+			lang = lang[0]
+		}
 		Client.lang = lang
 	} else{
 		Client.lang = navigator.language

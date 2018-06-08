@@ -5,13 +5,12 @@
 
 let Client = { }
 
-export  function initClient(lang) {
+export function initClient(lang) {
 	if(/mobile/gi.test(navigator.userAgent)){
 		Client.type = "mobile"
 	}else{
 		Client.type = "pc"
 	}
-
 
 	if(/ipad|iphone|mac/gi.test(navigator.userAgent)){
 		Client.OS = "IOS"
@@ -34,11 +33,11 @@ export  function initClient(lang) {
 	}
 }
 
-export  function getClient() {
+export function getClient() {
 	return Client
 }
 
-export  function setAttribute(lang) {
+export function setAttribute(lang) {
 	initClient(lang)
 	let $root = document.documentElement
 	$root.setAttribute('data-client-os',  Client.OS)

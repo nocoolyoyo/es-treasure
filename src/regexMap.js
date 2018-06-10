@@ -7,7 +7,7 @@
  * @author: nocoolyoyo
  * @date: 2018-03-11
  */
-export default regMap = {
+export default {
 	phone : /^1\d{10}$/,
 	email : /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/
 }

@@ -9,7 +9,7 @@ import imageLoaded from './imageLoaded'
 import regexMap from './regexMap'
 import strStyle from './strStyle'
 
-export default {
+module.exports =  {
 	copy2Board,
 	initClient,
 	getClient,
@@ -20,3 +20,4 @@ export default {
 	regexMap,
 	strStyle
 }
+module.exports.default = module.exports;

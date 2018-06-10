@@ -1,7 +1,6 @@
 /**
  * 获取指定的URL参数值
  * @param: name: { String }
- *
  * @return: value
  *
  * @author: nocoolyoyo

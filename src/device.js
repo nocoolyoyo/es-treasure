@@ -5,6 +5,7 @@
 
 let Client = { }
 
+
 export function initClient(lang) {
 	if(/mobile/gi.test(navigator.userAgent)){
 		Client.type = "mobile"

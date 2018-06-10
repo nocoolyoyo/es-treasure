@@ -1,14 +1,13 @@
-/*
+/**
  * 图片预加载完返回图片的信息
  * @param url {String}    //图片的url
- *
- * @return  { Promise }    //包含图片属性的promise的对象
- * @return  { Promise } { number } width        //图片宽度
- * @return  { Promise } { number } height       //图片高度
+ * @returns {Promise<any>}包含图片属性的promise的对象
+ * @returns {Promise} {number} width  图片宽度
+ * @returns {Promise} {number} height 图片高度
  *
  * @author: nocoolyoyo
  * @date: 2018-03-11
- * */
+ */
 export default function imageLoaded(url){
 	return new Promise((resolve, reject)=>{
 		let img = new Image() ;
@@ -17,7 +16,7 @@ export default function imageLoaded(url){
 			img = null;
 		};
 		img.onerror = function () {
-			reject('图片加载失败');
+			reject('load image fail');
 		}
 		img.src = url;
 	});

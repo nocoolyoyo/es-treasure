@@ -1,6 +1,6 @@
 {
   "name": "es-treasure",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "前端常用工具方法集合",
   "main": "lib/index.js",
   "scripts": {

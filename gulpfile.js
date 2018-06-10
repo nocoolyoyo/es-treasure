@@ -9,7 +9,11 @@ var concat = require("gulp-concat");
 gulp.task("build", function () {
 	return gulp.src("src/*.js")
 	    .pipe(babel({
-		    plugins: ['transform-runtime']
+		    plugins: ['transform-runtime'],
+		    presets: [
+			    "es2015",
+			    "stage-2"
+		    ],
 	    }))
 	    .pipe(gulp.dest("lib"))
 	    .pipe(concat("index.js"))

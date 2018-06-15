@@ -3,6 +3,7 @@
  */
 import copy2Board from './copy2Board'
 import { initClient, getClient, setAttribute } from './device'
+import { isTrimEmpty } from './is'
 import getParam from './getParam'
 import getStyle from './getStyle'
 import imageLoaded from './imageLoaded'
@@ -18,6 +19,7 @@ module.exports =  {
 	getStyle,
 	imageLoaded,
 	regexMap,
+	isTrimEmpty,
 	strStyle
 }
 module.exports.default = module.exports;

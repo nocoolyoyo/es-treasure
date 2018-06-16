@@ -2,10 +2,15 @@
  * 设备信息，同时提供初始化方法在页面初始化挂载
  * Created by nocoolyoyo on 2018/3/11.
  */
+import { isEmptyObject } from './validate'
 
 let Client = { }
 
-
+/**
+ * @function 初始化硬件信息
+ *
+ * @param lang
+ */
 export function initClient(lang) {
 	if(/mobile/gi.test(navigator.userAgent)){
 		Client.type = "mobile"
@@ -34,13 +39,39 @@ export function initClient(lang) {
 	}
 }
 
+/**
+ * @function 挂载硬件信息到节点属性
+ * @param lang
+ */
+export function mountClient(lang) {
+	initClient(lang)
+	const $root = document.documentElement
+	$root.setAttribute('data-client-os',  Client.OS)
+	$root.setAttribute('data-client-type',  Client.type)
+	$root.setAttribute('lang',  Client.lang)
+
+	if(Client.lang === "ar") {
+		$root.setAttribute('dir',  'rtl')
+	}
+}
+
+/**
+ * @function 获取硬件信息
+ * @returns {object}
+ */
 export function getClient() {
+	if(isEmptyObject(Client)) initClient(lang)
 	return Client
 }
 
+
+/**
+ * @function 兼容旧版本，准备废弃
+ * @param lang
+ */
 export function setAttribute(lang) {
 	initClient(lang)
-	let $root = document.documentElement
+	const $root = document.documentElement
 	$root.setAttribute('data-client-os',  Client.OS)
 	$root.setAttribute('data-client-type',  Client.type)
 	$root.setAttribute('lang',  Client.lang)

@@ -7,7 +7,7 @@ import { getStyle, strStyle } from './styleUtils'
 import getParam from './getParam'
 import imageLoaded from './imageLoaded'
 import RegexMap from './regexMap'
-import { isTrimEmpty, isEmail, isLowerCase, isUpperCase, isURL, isEmptyObject, isHexColor } from './validate'
+import { isTrimEmpty, isEmail, isLowerCase, isUpperCase, isURL, isEmptyObject, isHexColor, isStyleUnit } from './validate'
 
 module.exports =  {
 	RegexMap,
@@ -26,6 +26,7 @@ module.exports =  {
 	isURL,
 	isTrimEmpty,
 	isEmptyObject,
-	isHexColor
+	isHexColor,
+	isStyleUnit
 }
 module.exports.default = module.exports;

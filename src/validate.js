@@ -89,3 +89,13 @@ export function isHexColor(val){
 	return RegexMap.hexColor.test(val)
 }
 
+/**
+ * 样式表单位
+ * @param val
+ * @return {boolean}
+ */
+export function isStyleUnit(val){
+	if(typeof val !== 'string') return false
+	return RegexMap.styleUnit.test(val)
+}
+

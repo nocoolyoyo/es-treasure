@@ -78,3 +78,14 @@ export function isEmptyObject(val){
 	if(typeof val !== 'object') return false
 	return Object.keys(val).length > 0
 }
+
+/**
+ * 十六进制颜色
+ * @param val
+ * @return {boolean}
+ */
+export function isHexColor(val){
+	if(typeof val !== 'string') return false
+	return RegexMap.hexColor.test(val)
+}
+

@@ -3,11 +3,11 @@
  */
 import copy2Board from './copy2Board'
 import { initClient, getClient, mountClient, setAttribute } from './device'
-import { isTrimEmpty, isEmail, isLowerCase, isUpperCase, isURL, isEmptyObject } from './validate'
 import { getStyle, strStyle } from './styleUtils'
 import getParam from './getParam'
 import imageLoaded from './imageLoaded'
 import RegexMap from './regexMap'
+import { isTrimEmpty, isEmail, isLowerCase, isUpperCase, isURL, isEmptyObject } from './validate'
 
 module.exports =  {
 	RegexMap,

@@ -76,7 +76,7 @@ export function isTrimEmpty(val){
  */
 export function isEmptyObject(val){
 	if(typeof val !== 'object') return false
-	return Object.keys(val).length > 0
+	return Object.keys(val).length === 0
 }
 
 /**

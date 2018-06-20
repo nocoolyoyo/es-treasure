@@ -60,7 +60,7 @@ export function mountClient(lang) {
  * @returns {object}
  */
 export function getClient() {
-	if(isEmptyObject(Client)) initClient(lang)
+	if(isEmptyObject(Client)) initClient()
 	return Client
 }
 

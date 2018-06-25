@@ -1,6 +1,6 @@
 {
   "name": "es-treasure",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "前端常用工具方法集合",
   "main": "lib/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "gulp build",
     "publish:onemt": "nrm use onemt && npm publish",
     "publish:npm": "nrm use npm && npm publish",
-    "pub": "gulp build && npm run publish:npm && npm run publish:onemt"
+    "pub": "gulp build && npm run publish:npm"
   },
   "repository": {
     "type": "git",

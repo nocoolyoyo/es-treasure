@@ -8,10 +8,10 @@ let Client = { }
 
 /**
  * @function 初始化硬件信息
- *
  * @param lang
+ * @param isMount
  */
-export function initClient(lang) {
+export function initClient(lang, isMount = true) {
 	if(/mobile/gi.test(navigator.userAgent)){
 		Client.type = "mobile"
 	}else{
@@ -37,21 +37,16 @@ export function initClient(lang) {
 	} else{
 		Client.lang = navigator.language
 	}
-}
+	//挂载硬件信息到节点属性
+	if(isMount){
+		const $root = document.documentElement
+		$root.setAttribute('data-client-os',  Client.OS)
+		$root.setAttribute('data-client-type',  Client.type)
+		$root.setAttribute('lang',  Client.lang)
 
-/**
- * @function 挂载硬件信息到节点属性
- * @param lang
- */
-export function mountClient(lang) {
-	initClient(lang)
-	const $root = document.documentElement
-	$root.setAttribute('data-client-os',  Client.OS)
-	$root.setAttribute('data-client-type',  Client.type)
-	$root.setAttribute('lang',  Client.lang)
-
-	if(Client.lang === "ar") {
-		$root.setAttribute('dir',  'rtl')
+		if(Client.lang === "ar") {
+			$root.setAttribute('dir',  'rtl')
+		}
 	}
 }
 
@@ -63,7 +58,6 @@ export function getClient() {
 	if(isEmptyObject(Client)) initClient()
 	return Client
 }
-
 
 /**
  * @function 兼容旧版本，准备废弃

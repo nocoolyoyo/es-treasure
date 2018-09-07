@@ -2,9 +2,9 @@
  * Created by nocoolyoyo on 2018/6/11.
  */
 import copy2Board from './copy2Board'
-import { initClient, getClient, mountClient, setAttribute } from './device'
+import { initClient, getClient, setAttribute } from './device'
 import { getStyle, strStyle } from './styleUtils'
-import getParam from './getParam'
+import { getUrlParam as getParam, getUrlParam, appendUrlParam } from './urlParams'
 import imageLoaded from './imageLoaded'
 import RegexMap from './regexMap'
 import { isTrimEmpty, isEmail, isLowerCase, isUpperCase, isURL, isEmptyObject, isHexColor, isStyleUnit } from './validate'
@@ -14,9 +14,10 @@ module.exports =  {
 	copy2Board,
 	initClient,
 	getClient,
-	mountClient,
 	setAttribute,
-	getParam,
+	getParam, //旧版本做兼容
+	getUrlParam,
+	appendUrlParam,
 	getStyle,
 	strStyle,
 	imageLoaded,

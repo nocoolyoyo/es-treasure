@@ -58,19 +58,3 @@ export function getClient() {
 	if(isEmptyObject(Client)) initClient()
 	return Client
 }
-
-/**
- * @function 兼容旧版本，准备废弃
- * @param lang
- */
-export function setAttribute(lang) {
-	initClient(lang)
-	const $root = document.documentElement
-	$root.setAttribute('data-client-os',  Client.OS)
-	$root.setAttribute('data-client-type',  Client.type)
-	$root.setAttribute('lang',  Client.lang)
-
-	if(Client.lang === "ar") {
-		$root.setAttribute('dir',  'rtl')
-	}
-}

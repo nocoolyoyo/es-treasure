@@ -6,13 +6,12 @@
  * @author: nocoolyoyo
  * @date: 2018-03-11
  */
-export function getUrlParam(name) {
+export function getUrlParam(name, url = location.href) {
 	if(typeof name !== 'string') console.error('要获取的参数名必须为字符串')
-	//这里是去除加号，除公司外的项目可能会有影响
-	const url =  decodeURI(window.location.search.replace(/\+/g,'%20'))
+	const _url =  decodeURI(url.replace(/\+/g,'%20'))
+	const search = _url.substring(_url.lastIndexOf("?") + 1);
 	const reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i")
-	const r = url.substr(1).match(reg)
-
+	const r = search.match(reg)
 	if (r !== null)
 		return decodeURI(r[2])
 	return ''

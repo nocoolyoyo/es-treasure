@@ -6,7 +6,7 @@
  * @author: nocoolyoyo
  * @date: 2018-03-11
  */
-export function getUrlParam(name, url = location.href) {
+export function getUrlParam(name, url = window.location.href) {
   if (typeof name !== 'string') console.error('要获取的参数名必须为字符串')
   const _url = decodeURI(url.replace(/\+/g, '%20'))
   const search = _url.substring(_url.lastIndexOf('?') + 1)

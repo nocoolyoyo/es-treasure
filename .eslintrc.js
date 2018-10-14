@@ -29,7 +29,9 @@ module.exports = {
     'no-underscore-dangle': 0,
     'no-restricted-imports': 0,
     'prefer-destructuring': ['error', {'object': true, 'array': false}],
-    'prefer-promise-reject-errors': { 'allowEmptyReject': true },
-
+    'prefer-promise-reject-errors': 0,
+    'func-names': 0,
+    'no-console': 0,
+    'no-prototype-builtins': 0,
   }
 }

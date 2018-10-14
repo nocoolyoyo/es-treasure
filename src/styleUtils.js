@@ -11,11 +11,14 @@ import camelCase from './camelCase'
  * @author: nocoolyoyo
  * @date: 2018-03-11
  */
-export function strStyle(styleObj){
+export function strStyle(styleObj) {
   let cssStr = ''
-  for( let key in styleObj){
-    if(styleObj.hasOwnProperty(key)) cssStr += `${key}:${styleObj[key]};`
-  }
+  Object.keys(styleObj).forEach(key => {
+    if (styleObj.hasOwnProperty(key)) cssStr += `${key}:${styleObj[key]};`
+  })
+  // for (const key in styleObj) {
+  //   if (styleObj.hasOwnProperty(key)) cssStr += `${key}:${styleObj[key]};`
+  // }
   return cssStr
 }
 
@@ -27,7 +30,7 @@ export function strStyle(styleObj){
  * @author: nocoolyoyo
  * @date: 2018-03-11
  */
-export function getStyle (element, styleName) {
+export function getStyle(element, styleName) {
   if (!element || !styleName) return null
   styleName = camelCase(styleName)
   if (styleName === 'float') {
@@ -36,7 +39,7 @@ export function getStyle (element, styleName) {
   try {
     const computed = document.defaultView.getComputedStyle(element, '')
     return element.style[styleName] || computed ? computed[styleName] : null
-  } catch(e) {
+  } catch (e) {
     return element.style[styleName]
   }
 }

@@ -31,7 +31,7 @@ export function initClient(lang, isMount = true) {
     if (lang.length > 1) {
       lang = `${lang[0]}-${lang[1].toUpperCase()}`
     } else {
-      lang = lang[0 ]
+      lang = lang[0]
     }
     Client.lang = lang
   } else {

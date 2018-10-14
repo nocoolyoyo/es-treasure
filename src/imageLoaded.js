@@ -11,7 +11,7 @@
 export default function imageLoaded(url) {
   return new Promise((resolve, reject) => {
     let img = new Image()
-    img.onload = function onload() {
+    img.onload = function () {
       resolve({
         width: this.width,
         height: this.height,
@@ -19,7 +19,7 @@ export default function imageLoaded(url) {
       }) // real_width,real_height
       img = null
     }
-    img.onerror = function onerror() {
+    img.onerror = function () {
       reject('load image fail')
     }
     img.src = url

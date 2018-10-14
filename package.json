@@ -5,7 +5,10 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build",
+    "serve": "cross-env TYPE=umd ENV=development rollup -c build/rollup.config.dev.js -w",
+    "build:umd": "cross-env TYPE=umd ENV=production rollup -c build/rollup.config.prod.js",
+    "build:cjs": "cross-env TYPE=cjs ENV=production rollup -c build/rollup.config.prod.js",
+    "build": "npm run build:umd && npm run build:cjs",
     "publish:onemt": "nrm use onemt && npm publish",
     "publish:npm": "nrm use npm && npm publish",
     "pub": "gulp build && npm run publish:npm"
@@ -31,32 +34,25 @@
     "eslint": ">= 3"
   },
   "dependencies": {
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "babel-runtime": "^6.26.0",
     "clipboard": "^2.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^10.0.1",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/runtime": "^7.1.2",
+    "cross-env": "^5.2.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-sourcemaps": "^2.6.4",
     "rollup": "^0.66.6",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-eslint": "^5.0.0",
     "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-serve": "^0.6.0",
     "rollup-plugin-uglify": "^6.0.0"
   }
 }

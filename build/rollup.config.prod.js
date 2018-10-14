@@ -4,7 +4,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import { uglify } from 'rollup-plugin-uglify'
 import { eslint } from 'rollup-plugin-eslint'
 
-import packages from './package.json'
+import packages from '../package.json'
 
 const config = {
   input: 'src/index.js',
@@ -15,13 +15,9 @@ const config = {
   },
   plugins: [
     eslint(),
-    babel(
-      {
-        exclude: 'node_modules/**',
-        plugins: ['external-helpers', 'transform-runtime'],
-        runtimeHelpers: true,
-      },
-    ),
+    babel({
+      runtimeHelpers: true,
+    }),
     resolve({
       jsnext: true,
       main: true,

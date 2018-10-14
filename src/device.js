@@ -4,7 +4,7 @@
  */
 import { isEmptyObject } from './validate'
 
-let Client = { }
+const Client = { }
 
 /**
  * @function 初始化硬件信息
@@ -12,42 +12,42 @@ let Client = { }
  * @param isMount
  */
 export function initClient(lang, isMount = true) {
-	if(/mobile/gi.test(navigator.userAgent)){
-		Client.type = "mobile"
-	}else{
-		Client.type = "pc"
-	}
+  if (/mobile/gi.test(navigator.userAgent)) {
+    Client.type = 'mobile'
+  } else {
+    Client.type = 'pc'
+  }
 
-	if(/ipad|iphone|mac/gi.test(navigator.userAgent)){
-		Client.OS = "IOS"
-	}else if(/android/gi.test(navigator.userAgent)){
-		Client.OS = "Android"
-	}else if(/window/gi.test(navigator.userAgent)){
-		Client.OS = "Windows"
-	}
+  if (/ipad|iphone|mac/gi.test(navigator.userAgent)) {
+    Client.OS = 'IOS'
+  } else if (/android/gi.test(navigator.userAgent)) {
+    Client.OS = 'Android'
+  } else if (/window/gi.test(navigator.userAgent)) {
+    Client.OS = 'Windows'
+  }
 
-	if(lang && lang !== ''){
-		lang = lang.split('-')
-		if(lang.length > 1) {
-			lang = lang[0]+'-'+lang[1].toUpperCase()
-		}else{
-			lang = lang[0]
-		}
-		Client.lang = lang
-	} else{
-		Client.lang = navigator.language
-	}
-	//挂载硬件信息到节点属性
-	if(isMount){
-		const $root = document.documentElement
-		$root.setAttribute('data-client-os',  Client.OS)
-		$root.setAttribute('data-client-type',  Client.type)
-		$root.setAttribute('lang',  Client.lang)
+  if (lang && lang !== '') {
+    lang = lang.split('-')
+    if (lang.length > 1) {
+      lang = `${lang[0]}-${lang[1].toUpperCase()}`
+    } else {
+      lang = lang[0 ]
+    }
+    Client.lang = lang
+  } else {
+    Client.lang = navigator.language
+  }
+  // 挂载硬件信息到节点属性
+  if (isMount) {
+    const $root = document.documentElement
+    $root.setAttribute('data-client-os', Client.OS)
+    $root.setAttribute('data-client-type', Client.type)
+    $root.setAttribute('lang', Client.lang)
 
-		if(Client.lang === "ar") {
-			$root.setAttribute('dir',  'rtl')
-		}
-	}
+    if (Client.lang === 'ar') {
+      $root.setAttribute('dir', 'rtl')
+    }
+  }
 }
 
 /**
@@ -55,6 +55,6 @@ export function initClient(lang, isMount = true) {
  * @returns {object}
  */
 export function getClient() {
-	if(isEmptyObject(Client)) initClient()
-	return Client
+  if (isEmptyObject(Client)) initClient()
+  return Client
 }

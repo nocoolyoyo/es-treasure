@@ -34,23 +34,16 @@ export function isLowerCase(val) {
  *
  * @param    {string}  val   被校验参数
  * @returns   {boolean}
- *
- * @date       2018/2/19
- * @author   nocoolyoyo
  */
 export function isUpperCase(val) {
   return RegexMap.upperCase.test(val)
 }
-
 
 /**
  * 邮箱校验
  *
  * @param    {string}  val   被校验参数
  * @returns   {boolean}
- *
- * @date       2018/2/19
- * @author   nocoolyoyo
  */
 export function isEmail(val) {
   return RegexMap.email.test(val)
@@ -60,13 +53,10 @@ export function isEmail(val) {
  * 空字符串校验
  * @param val
  * @returns {boolean}
- *
- * @date       2018/6/16
- * @author   nocoolyoyo
  */
-export function isTrimEmpty(val){
-	if(typeof val !== 'string') return false
-	return val.trim() === ''
+export function isTrimEmpty(val) {
+  if (typeof val !== 'string') { return false }
+  return val.trim() === ''
 }
 
 /**
@@ -74,9 +64,9 @@ export function isTrimEmpty(val){
  * @param val
  * @return {boolean}
  */
-export function isEmptyObject(val){
-	if(typeof val !== 'object') return false
-	return Object.keys(val).length === 0
+export function isEmptyObject(val) {
+  if (typeof val !== 'object') { return false }
+  return Object.keys(val).length === 0
 }
 
 /**
@@ -84,9 +74,9 @@ export function isEmptyObject(val){
  * @param val
  * @return {boolean}
  */
-export function isHexColor(val){
-	if(typeof val !== 'string') return false
-	return RegexMap.hexColor.test(val)
+export function isHexColor(val) {
+  if (typeof val !== 'string') { return false }
+  return RegexMap.hexColor.test(val)
 }
 
 /**
@@ -94,8 +84,7 @@ export function isHexColor(val){
  * @param val
  * @return {boolean}
  */
-export function isStyleUnit(val){
-	if(typeof val !== 'string') return false
-	return RegexMap.styleUnit.test(val)
+export function isStyleUnit(val) {
+  if (typeof val !== 'string') { return false }
+  return RegexMap.styleUnit.test(val)
 }
-

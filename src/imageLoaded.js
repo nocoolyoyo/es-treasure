@@ -8,20 +8,20 @@
  * @author: nocoolyoyo
  * @date: 2018-03-11
  */
-export default function imageLoaded(url){
-	return new Promise((resolve, reject)=>{
-		let img = new Image()
-		img.onload = function(){
-			resolve({
-				width:this.width,
-				height:this.height
-				//todo:添加大小，图片类型等信息
-			})       //real_width,real_height
-			img = null
-		};
-		img.onerror = function () {
-			reject('load image fail')
-		}
-		img.src = url
-	});
+export default function imageLoaded(url) {
+  return new Promise((resolve, reject) => {
+    let img = new Image()
+    img.onload = function onload() {
+      resolve({
+        width: this.width,
+        height: this.height,
+        // todo:添加大小，图片类型等信息
+      }) // real_width,real_height
+      img = null
+    }
+    img.onerror = function onerror() {
+      reject('load image fail')
+    }
+    img.src = url
+  })
 }

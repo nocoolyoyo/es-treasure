@@ -9,29 +9,29 @@ import ClipboardJS from 'clipboard'
  * @date      2018-03-01
  * @author   nocoolyoyo
  */
-export  default function clip2Board(text='') {
-	const domId = 'clipDom' + new Date().getTime()
-	const $dom = document.createElement('button')
-	const $container = document.body
+export default function clip2Board(text = '') {
+  const domId = `clipDom${new Date().getTime()}`
+  const $dom = document.createElement('button')
+  const $container = document.body
 
-	$dom.style.display = 'hidden'
-	$dom.style.position = 'fixed'
-	$dom.setAttribute('id', domId)
-	$dom.setAttribute('data-clipboard-text', text)
+  $dom.style.display = 'hidden'
+  $dom.style.position = 'fixed'
+  $dom.setAttribute('id', domId)
+  $dom.setAttribute('data-clipboard-text', text)
 
-	$container.appendChild($dom)
+  $container.appendChild($dom)
 
-	const Clipboard = new ClipboardJS(`#${domId}`)
-	return new Promise((resolve, reject)=>{
-		Clipboard.on('success', function(e) {
-			e.clearSelection();
-			$container.removeChild($dom)
-			resolve(e.text)
-		});
-		Clipboard.on('error', function(e) {
-			$container.removeChild($dom)
-			reject()
-		});
-		$dom.click();
-	})
+  const Clipboard = new ClipboardJS(`#${domId}`)
+  return new Promise((resolve, reject) => {
+    Clipboard.on('success', (e) => {
+      e.clearSelection()
+      $container.removeChild($dom)
+      resolve(e.text)
+    })
+    Clipboard.on('error', (e) => {
+      $container.removeChild($dom)
+      reject(e.text)
+    })
+    $dom.click()
+  })
 }

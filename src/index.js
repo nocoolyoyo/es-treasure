@@ -1,6 +1,7 @@
 /**
  * Created by nocoolyoyo on 2018/6/11.
  */
+// import debug from 'debug'
 import copy2Board from './copy2Board'
 import { initClient, getClient } from './device'
 import { getStyle, strStyle } from './styleUtils'
@@ -10,6 +11,7 @@ import RegexMap from './regexMap'
 import {
   isTrimEmpty, isEmail, isLowerCase, isUpperCase, isURL, isEmptyObject, isHexColor, isStyleUnit,
 } from './validate'
+
 
 module.exports = {
   RegexMap,

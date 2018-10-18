@@ -37,6 +37,7 @@ export function initClient(lang, isMount = true) {
   } else {
     Client.lang = navigator.language
   }
+  console.log(123123123223)
   // 挂载硬件信息到节点属性
   if (isMount) {
     const $root = document.documentElement
@@ -55,6 +56,6 @@ export function initClient(lang, isMount = true) {
  * @returns {object}
  */
 export function getClient() {
-  if (isEmptyObject(Client)) initClient()
+  if (isEmptyObject(Client)) { initClient() }
   return Client
 }
